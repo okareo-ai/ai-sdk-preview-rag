@@ -11,6 +11,22 @@ A [Next.js](https://nextjs.org/) application, powered by the Vercel AI SDK, that
 - Vector embedding storage with [DrizzleORM](https://orm.drizzle.team/) and [PostgreSQL](https://www.postgresql.org/)
 - Animated UI with [Framer Motion](https://www.framer.com/motion/)
 
+## Local Postrgres DB
+
+Run the following to get the docker image with the [pgvector](https://github.com/pgvector/pgvector) extension:
+
+```
+docker pull pgvector/pgvector:pg17
+```
+
+Then run the container with:
+
+```
+docker-compose up -d
+```
+
+Make sure the `DATABASE_URL` field of your .env file points to this docker container.
+
 ## Getting Started
 
 To get the project up and running, follow these steps:
