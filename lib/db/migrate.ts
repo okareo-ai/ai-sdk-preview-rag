@@ -14,7 +14,7 @@ const runMigrate = async () => {
 
   const db = drizzle(connection);
 
-  console.log("⏳ Running migrations...");
+  console.log(`⏳ Running migrations to URL ${env.DATABASE_URL}...`);
 
   const start = Date.now();
 

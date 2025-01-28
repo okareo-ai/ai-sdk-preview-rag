@@ -80,11 +80,13 @@ export async function POST(req: Request) {
             }),
             prompt: `Analyze this query: "${query}". Provide the following:
                     3 similar questions that could help answer the user's query`,
+            experimental_telemetry: { isEnabled: true, functionId: "understandQuery" },
           });
           return object.questions;
         },
       }),
     },
+    experimental_telemetry: { isEnabled: true, functionId: "answerQuery" },
   });
 
   return result.toDataStreamResponse();
